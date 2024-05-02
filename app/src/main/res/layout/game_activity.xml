@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:rowCount="3"
+    android:padding="16dp">
+
+    <!-- Создаем кнопки для игрового поля 3x3 -->
+    <!-- Пример добавления одной кнопки -->
+    <Button
+        android:id="@+id/button_00"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textSize="24sp"
+        android:onClick="onButtonClick"/>
+
+    <!-- Добавьте остальные кнопки по аналогии, изменяя id (button_01, button_02, ...) -->
+
+    <TextView
+        android:id="@+id/gameStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="3"
+        android:text="Player 1's turn (X)"
+        android:textSize="18sp"
+        android:padding="20dp"
+        android:gravity="center_horizontal"/>
+</GridLayout>
