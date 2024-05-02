@@ -77,8 +77,21 @@ class GameActivity : AppCompatActivity() {
 
 
     private fun updateStatus(status: String) {
-        findViewById<TextView>(R.id.gameStatus).text = status
+        val statusTextView = findViewById<TextView>(R.id.gameStatus)
+        statusTextView.text = status
+
+        val restartButton = findViewById<Button>(R.id.restartButton)
+        val homeButton = findViewById<Button>(R.id.homeButton)
+
+        if (status.contains("wins") || status == "Draw!") {
+            restartButton.visibility = View.VISIBLE
+            homeButton.visibility = View.VISIBLE
+        } else {
+            restartButton.visibility = View.GONE
+            homeButton.visibility = View.GONE
+        }
     }
+
 
     fun restartGame(view: View) {
         buttons.forEach { row ->
