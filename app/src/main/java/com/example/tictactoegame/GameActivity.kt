@@ -44,15 +44,18 @@ class GameActivity : AppCompatActivity() {
         if (checkForWin()) {
             val winner = if (player1Turn) "Player 1 wins!" else "Player 2 wins!"
             updateStatus(winner)
+            findViewById<Button>(R.id.restartButton).visibility = View.VISIBLE
+            findViewById<Button>(R.id.homeButton).visibility = View.VISIBLE
         } else if (roundCount == 9) {
             updateStatus("Draw!")
+            findViewById<Button>(R.id.restartButton).visibility = View.VISIBLE
+            findViewById<Button>(R.id.homeButton).visibility = View.VISIBLE
         } else {
             player1Turn = !player1Turn
             updateStatus(if (player1Turn) "Player 1's turn (X)" else "Player 2's turn (O)")
         }
 
-        findViewById<Button>(R.id.restartButton).visibility = View.VISIBLE
-        findViewById<Button>(R.id.homeButton).visibility = View.VISIBLE
+
     }
 
     private fun checkForWin(): Boolean {
