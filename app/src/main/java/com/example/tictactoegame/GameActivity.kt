@@ -27,7 +27,8 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    fun onButtonClick(button: Button) {
+    fun onButtonClick(view: View) {
+        val button = view as Button
         if (button.text.isNotEmpty()) {
             return
         }
@@ -52,7 +53,6 @@ class GameActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.restartButton).visibility = View.VISIBLE
         findViewById<Button>(R.id.homeButton).visibility = View.VISIBLE
-
     }
 
     private fun checkForWin(): Boolean {
@@ -112,7 +112,6 @@ class GameActivity : AppCompatActivity() {
     fun goHome(view: View) {
         finish()
     }
-
 
 }
 
